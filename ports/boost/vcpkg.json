@@ -1,8 +1,10 @@
 {
   "name": "boost",
-  "version": "1.78.0",
+  "version": "1.80.0",
+  "port-version": 1,
   "description": "Peer-reviewed portable C++ source libraries",
   "homepage": "https://boost.org",
+  "license": "BSL-1.0",
   "dependencies": [
     "boost-accumulators",
     "boost-algorithm",
@@ -38,7 +40,7 @@
     "boost-core",
     {
       "name": "boost-coroutine",
-      "platform": "!arm & !uwp & !emscripten"
+      "platform": "!(arm & windows) & !uwp & !emscripten"
     },
     {
       "name": "boost-coroutine2",
@@ -54,7 +56,7 @@
     "boost-exception",
     {
       "name": "boost-fiber",
-      "platform": "!osx & !uwp & !arm & !emscripten"
+      "platform": "!uwp & !arm & !emscripten"
     },
     {
       "name": "boost-filesystem",
