@@ -186,7 +186,7 @@ if(NOT IOS)
                 no-ssl2
                 no-idea
                 no-cast
-                no-seed
+#                no-seed
                 no-md2
                 no-tests)
     endif()
