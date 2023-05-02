@@ -1,0 +1,22 @@
+#set(CV5_HOST_NAME "aarch64-linux-gnu")
+#
+#if(NOT DEFINED ENV{CV5_TOOLCHAIN_ROOT})
+#   find_path(CV5_TOOLCHAIN_ROOT "${CV5_HOST_NAME}-gcc")
+#else()
+#   set(CV5_TOOLCHAIN_ROOT "$ENV{CV5_TOOLCHAIN_ROOT}")
+#   #set(CV5_TOOLCHAIN_ROOT "/usr/local/cortex-a76-2022.03-gcc11.2-linux5.15/bin/aarch64-linux-gnu-")
+#endif()
+#
+#set(CMAKE_C_COMPILER   "${CV5_TOOLCHAIN_ROOT}/${CV5_HOST_NAME}-gcc" )
+#set(CMAKE_CXX_COMPILER "${CV5_TOOLCHAIN_ROOT}/${CV5_HOST_NAME}-g++" )
+#set(CMAKE_LINKER       "${CV5_TOOLCHAIN_ROOT}/${CV5_HOST_NAME}-ld" )
+#set(CMAKE_NM           "${CV5_TOOLCHAIN_ROOT}/${CV5_HOST_NAME}-nm" )
+#set(CMAKE_OBJCOPY      "${CV5_TOOLCHAIN_ROOT}/${CV5_HOST_NAME}-objcopy" )
+#set(CMAKE_OBJDUMP      "${CV5_TOOLCHAIN_ROOT}/${CV5_HOST_NAME}-objdump" )
+#set(CMAKE_RANLIB       "${CV5_TOOLCHAIN_ROOT}/${CV5_HOST_NAME}-ranlib" )
+#set(CMAKE_AR           "${CV5_TOOLCHAIN_ROOT}/${CV5_HOST_NAME}-ar" )
+
+set(VCPKG_TARGET_ARCHITECTURE arm64)
+set(VCPKG_CRT_LINKAGE dynamic)
+set(VCPKG_LIBRARY_LINKAGE static)
+set(VCPKG_CMAKE_SYSTEM_NAME Linux)
