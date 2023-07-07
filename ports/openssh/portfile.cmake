@@ -27,9 +27,16 @@ vcpkg_configure_make(
 	AUTOCONFIG
 	OPTIONS
 		--prefix=${CURRENT_INSTALLED_DIR}
+		--bindir=/usr/bin
+		--sbindir=/usr/sbin
+		--sysconfdir=/etc
+		--libexecdir=/usr/libexec
+		--localstatedir=/var
+		--runstatedir=/var/run
 		--with-ssl-dir=${CURRENT_INSTALLED_DIR}
 		--with-zlib=${CURRENT_INSTALLED_DIR}
-		--with-privsep-path=${CURRENT_INSTALLED_DIR}/var/empty
+		--with-privsep-path=/var/empty
+		--with-pid-dir=/var/run
 		--with-mantype=man
 		--with-mantype=cat
 		--with-mantype=doc
@@ -39,11 +46,11 @@ vcpkg_configure_make(
 vcpkg_install_make()
 vcpkg_fixup_pkgconfig()
 
-file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/share")
-file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
-file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/var/empty")
-file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/var")
-file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/etc")
-file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/libexec")
+#file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/share")
+#file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
+#file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/var/empty")
+#file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/var")
+#file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/etc")
+#file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/libexec")
 
 file(INSTALL "${SOURCE_PATH}/LICENCE" DESTINATION "${CURRENT_PACKAGES_DIR}/share/${PORT}" RENAME copyright)

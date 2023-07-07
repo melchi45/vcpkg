@@ -1,0 +1,17 @@
+--- a/configure	2022-11-24 14:24:24.000000000 +0900
++++ b/configure	2023-05-03 16:31:24.825284734 +0900
+@@ -1,5 +1,13 @@
+ #!/bin/sh
+-./aconfigure "$@"
++
++path=`readlink -f "${BASH_SOURCE:-$0}"`
++DIR_PATH=`dirname $path`
++
++echo "The absolute path is" $path
++echo "---------------------------------------------"
++echo "The Directory Path is" $DIR_PATH
++
++$DIR_PATH/aconfigure "$@"
+ 
+ # Note:
+ # if you're looking for the old configure script, it has been renamed

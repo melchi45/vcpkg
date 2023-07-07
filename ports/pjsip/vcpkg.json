@@ -1,0 +1,24 @@
+{
+  "name": "pjsip",
+  "version": "2.13",
+  "port-version": 1,
+  "description": "PJSIP is a free and open source multimedia communication library.",
+  "homepage": "https://www.pjsip.org",
+  "license": "GPL-2.0",
+  "dependencies": [
+    {
+      "name": "vcpkg-cmake",
+      "host": true
+    },
+    {
+      "name": "vcpkg-cmake-config",
+      "host": true
+    },
+	"libsrtp",
+	"openssl",
+	"libuuid",
+	"pthreads"
+  ],
+  "features": {
+  }
+}
