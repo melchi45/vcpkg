@@ -6,19 +6,18 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO stephenberry/glaze
     REF "v${VERSION}"
-    SHA512 a57b7807ff99a7388e4b19564ba7505fc7e8e3ac9a1b6c02335d2c5ef65b0e9e015aa3e7795e634855e013ccea8049efbbe72ca0d9c738e2f0480f86e1e26b5e
+    SHA512 4b9fb73790892cb7543ee94e773ff706f9fad46cd95c472b68d1f535413bc2b46c2d36970cbe31858444a5463ec19215ef50f4c37e8efe5f4f23c61acf7a53ed
 )
 
 vcpkg_cmake_configure(
     SOURCE_PATH "${SOURCE_PATH}"
     OPTIONS
-      -Dglaze_DEVELOPER_MODE=OFF
+        -Dglaze_DEVELOPER_MODE=OFF
 )
 
 vcpkg_cmake_install()
-
-vcpkg_copy_pdbs()
+vcpkg_cmake_config_fixup()
 
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug")
 
-vcpkg_install_copyright(FILE_LIST "${SOURCE_PATH}/LICENSE.txt")
+vcpkg_install_copyright(FILE_LIST "${SOURCE_PATH}/LICENSE")
